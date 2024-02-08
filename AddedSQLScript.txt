@@ -1,0 +1,18 @@
+alter table customer add column Password VARCHAR(255);
+
+alter table customer add column IsAdmin VARCHAR(10);
+
+update customer set Password='1234' where CID >  100;
+
+update customer set IsAdmin='1' where CID >  100 and CID <105;
+
+
+CREATE TABLE Cart (
+    CID INT,
+    PID INT,
+    Quantity INT,
+    FOREIGN KEY (CID) REFERENCES Customer(CID),
+    FOREIGN KEY (PID) REFERENCES Product(PID)
+);
+
+ 
